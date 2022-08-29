@@ -1,3 +1,6 @@
+package Tests;
+
+import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,7 +11,12 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     WebDriver driver;
-    String URL = "https://www.saucedemo.com/";
+    LoginPage loginPage;
+    ProductsListPage productsPage;
+    CartPage cartPage;
+    CheckoutPage checkoutPage;
+    CheckoutOverviewPage checkoutOverviewPage;
+
 
     @BeforeMethod
     public void setup() {
@@ -18,6 +26,12 @@ public class BaseTest {
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        loginPage = new LoginPage(driver);
+        productsPage = new ProductsListPage(driver);
+        cartPage = new CartPage(driver);
+        checkoutPage = new CheckoutPage(driver);
+        checkoutOverviewPage = new CheckoutOverviewPage(driver);
+
     }
 
     @AfterMethod(alwaysRun = true)
@@ -25,4 +39,7 @@ public class BaseTest {
         WebDriver driver = new ChromeDriver();
         driver.quit();
     }
+
+
 }
+
