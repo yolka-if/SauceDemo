@@ -4,11 +4,9 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 public class Locators extends BaseTest {
-  //логин и пароль  final static String User;/
 
     @Test
     public void buyTest(){
-        //driver.get(URL);
         driver.findElement(By.id("user-name")).sendKeys("performance_glitch_user");
         driver.findElement(By.cssSelector("input[placeholder=Password]")).sendKeys("secret_sauce");
         driver.findElement(By.xpath("//input[@value = 'Login']")).click();

@@ -1,9 +1,9 @@
 package tests;
 
-import pages.ProductsListPage;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pages.ProductsListPage;
 
 import static org.testng.Assert.assertTrue;
 
