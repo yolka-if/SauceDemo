@@ -1,7 +1,6 @@
-package Tests;
+package tests;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
@@ -15,14 +14,13 @@ public class CartTest extends BaseTest {
         productsPage.addToCart("Sauce Labs Backpack");
         productsPage.addToCart("Sauce Labs Bike Light");
         productsPage.clickCard();
-        cartPage.clickRemove("Sauce Labs Bike Light");
+        cartPage.clickRemove("Sauce Labs Backpack");
         cartPage.goToCheckout();
         checkoutPage.fillCheckout("Test", "Test", "23454");
-        try {
-            assertTrue(driver.findElement(By.xpath("//div[text() = 'Sauce Labs Bike Light']//ancestor::div[@class='cart_item']//div[@class='inventory_item_name']")).isDisplayed());
-        } catch (NoSuchElementException e) {
-            System.out.println("Товар был удалён");
-
+    if (!cartPage.isProductCardExists("Sauce Labs Backpack")){
+        System.out.println("Товар был удалён");
+        } else  {
+        assertTrue(false, "Tовар не был удалён");
         }
     }
 

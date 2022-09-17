@@ -1,4 +1,4 @@
-package Tests;
+package tests;
 
 import org.testng.annotations.Test;
 
@@ -6,7 +6,7 @@ import static org.testng.Assert.assertEquals;
 
 public class ProductTest extends BaseTest {
 
-    @Test
+    @Test(description = "Проверка того что...")
     public void checkProductInfo() {
         loginPage.open();
         loginPage.login("performance_glitch_user", "secret_sauce");
