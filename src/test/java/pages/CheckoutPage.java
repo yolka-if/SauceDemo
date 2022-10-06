@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,6 +21,7 @@ public class CheckoutPage extends BasePage {
     public void fillCheckout(String firstName, String lastName, String postalcode) {
         driver.findElement(FIRSTNAME_FIELD).sendKeys(firstName);
         driver.findElement(LASTNAME_FIELD).sendKeys(lastName);
+        driver.findElement(POSTALCODE_FIELD).sendKeys(postalcode);
         driver.findElement(CONTINUE_BUTTON).click();
     }
 
