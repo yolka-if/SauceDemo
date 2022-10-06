@@ -10,10 +10,12 @@
 
 
     <properties>
+ TMS5-fix
         <aspect.version>1.9.9.1</aspect.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
         <suiteXmlFile> src/test/resources/SmokeTest.xml</suiteXmlFile>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+ master
     </properties>
 
     <build>
